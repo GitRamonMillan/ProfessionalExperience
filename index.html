@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1eb">
+  <title>Mi trayectoria de desarrollo · Timeline</title>
+  <style>
+    :root{--paper:#f4f1eb;--ink:#202a27;--muted:#66716c;--line:#d8ddd5;--green:#1d694f;--lime:#d8ed91;--card:#fffefa;--orange:#d77a4b;--shadow:0 18px 50px #263c3010}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    .wrap{width:min(1120px,calc(100% - 40px));margin:auto}.hero{padding:72px 0 48px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:430px;height:430px;border:1px solid #c8d2c6;border-radius:50%;right:-180px;top:-190px;box-shadow:0 0 0 45px #dce3d533,0 0 0 90px #dce3d522;pointer-events:none}
+    .eyebrow{font-size:12px;font-weight:750;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}h1{font-size:clamp(42px,7vw,78px);line-height:.99;letter-spacing:-.065em;max-width:780px;margin:18px 0 22px;font-weight:760}.hero p{max-width:690px;color:#4e5c56;font-size:18px;margin:0}.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid #cbd4ca;border-radius:99px;padding:7px 12px;font-size:12px;color:#40534a;background:#ffffff70}.dot{width:7px;height:7px;border-radius:50%;background:var(--green)}
+    .toolbar{position:sticky;top:0;z-index:5;background:#f4f1ebed;backdrop-filter:blur(14px);border-block:1px solid var(--line)}.tools{display:flex;gap:14px;align-items:center;padding:12px 0}.search{flex:1;min-width:180px;border:1px solid var(--line);background:#fffefa;border-radius:12px;padding:12px 14px;color:var(--ink);font:inherit;outline:none}.search:focus{border-color:var(--green);box-shadow:0 0 0 3px #1d694f18}.count{font-size:13px;color:var(--muted);white-space:nowrap}.jump{border:0;background:var(--ink);color:white;border-radius:11px;padding:11px 14px;font:inherit;font-size:13px;cursor:pointer;white-space:nowrap}
+    main{padding:54px 0 80px}.intro{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:44px}.intro h2{font-size:28px;letter-spacing:-.04em;margin:0}.intro p{color:var(--muted);max-width:450px;margin:0;font-size:14px}.timeline{position:relative;margin-left:91px;padding-left:38px;border-left:1px solid #b9c7bb}.year-group{position:relative;margin-bottom:56px}.year{position:absolute;right:calc(100% + 57px);top:1px;font-size:21px;letter-spacing:-.04em;font-weight:740;color:var(--green);font-variant-numeric:tabular-nums}.year:after{content:"";position:absolute;right:-48px;top:10px;width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px var(--paper),0 0 0 6px #a8b7aa}.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{background:var(--card);border:1px solid #e1e4dc;border-radius:17px;padding:21px 22px 19px;box-shadow:var(--shadow);transition:transform .18s,border-color .18s}.card:hover{transform:translateY(-2px);border-color:#a8c5af}.card-top{display:flex;justify-content:space-between;gap:12px;align-items:start}.client{font-size:19px;line-height:1.2;letter-spacing:-.035em;font-weight:740}.period{font-size:11px;white-space:nowrap;color:var(--green);background:#edf4e6;border-radius:99px;padding:5px 9px;font-weight:700}.type{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#77837b;margin:9px 0 10px}.desc{font-size:14px;color:#4d5b54;margin:0}.techs{display:flex;flex-wrap:wrap;gap:6px;margin-top:15px}.tech{font-size:10px;line-height:1.3;font-weight:650;color:#365847;background:#edf3e9;border:1px solid #e0e9da;border-radius:6px;padding:4px 7px}.expander{margin-top:16px;border-top:1px solid #edf0e9;padding-top:12px}.expander summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--green);font-size:12px;font-weight:720}.expander summary::-webkit-details-marker{display:none}.expander summary:after{content:"＋";font-size:17px;line-height:1;color:var(--green)}.expander[open] summary:after{content:"−"}.expander summary:focus-visible{outline:2px solid var(--green);outline-offset:4px;border-radius:4px}.work-list{display:grid;gap:9px;margin-top:12px}.work-item{border:1px solid #e8ece4;border-radius:11px;padding:12px;background:#fbfcf8}.work-name{font-size:13px;font-weight:720;color:#283b31}.work-desc{font-size:12px;line-height:1.5;color:#617067;margin:5px 0 0}.work-techs{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}.work-techs .tech{font-size:9px}.evidence{font-size:11px;color:#89928c;margin-top:14px;padding-top:11px;border-top:1px solid #edf0e9}.empty{display:none;text-align:center;color:var(--muted);padding:50px}.note{margin:34px 0 0 129px;background:#e8eddf;border-radius:15px;padding:18px 20px;font-size:13px;color:#4c5d50}.note strong{color:#273b30}.foot{border-top:1px solid var(--line);padding:25px 0 40px;color:#77817b;font-size:12px;display:flex;justify-content:space-between;gap:15px}
+    .card{border-top:3px solid var(--card-accent,var(--green))}.client{color:var(--card-accent,var(--ink))}.year{color:var(--card-accent,var(--green))}.client-link{color:inherit;text-decoration:none}.client-link:hover{text-decoration:underline}.client-link:focus-visible{outline:2px solid var(--card-accent,var(--green));outline-offset:3px;border-radius:2px}
+    .profile-heading{display:flex;align-items:center;gap:18px;margin-bottom:18px}.profile-link{display:block;flex:none;width:76px;height:76px;border-radius:50%;overflow:hidden;border:3px solid #fffefa;box-shadow:0 5px 18px #263c3025}.profile-photo{width:100%;height:100%;display:block;object-fit:cover}.profile-link:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:50%}
+    @media(max-width:720px){.hero{padding:48px 0 35px}.hero p{font-size:16px}.profile-heading{gap:13px}.profile-link{width:62px;height:62px}.tools{flex-wrap:wrap}.search{order:0;flex-basis:100%}.intro{display:block}.intro p{margin-top:8px}.timeline{margin-left:56px;padding-left:22px}.year{right:calc(100% + 32px);font-size:17px}.year:after{right:-29px}.cards{grid-template-columns:1fr}.note{margin-left:78px}.card{padding:18px}.foot{display:block}.foot span{display:block;margin-top:5px}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="hero"><div class="wrap">
+    <div class="profile-heading"><a class="profile-link" href="https://github.com/GitRamonMillan" target="_blank" rel="noopener noreferrer" aria-label="Abrir perfil de GitHub de Ramón Millán en una pestaña nueva"><img class="profile-photo" src="https://github.com/GitRamonMillan.png" alt="Foto de perfil de Ramón Millán en GitHub" referrerpolicy="no-referrer" onerror="this.parentElement.style.display='none'"></a><div class="eyebrow">Ramón Millán · Ingeniero de Software · 2001—2026</div></div>
+    <h1>Una carrera hecha de proyectos.</h1>
+    <p>Un recorrido por los desarrollos encontrados en mi archivo de trabajo: sitios, plataformas, automatizaciones y herramientas construidas para distintos clientes.</p>
+    <div class="hero-meta"><span class="pill"><i class="dot"></i><span id="project-total">—</span> clientes y grupos identificados</span><span class="pill"><i class="dot"></i><span id="work-total">—</span> proyectos identificados</span></div>
+  </div></header>
+  <div class="toolbar"><div class="wrap tools"><input class="search" id="search" type="search" placeholder="Buscar cliente, tecnología o proyecto…" aria-label="Buscar en el timeline"><span class="count" id="count"></span><button class="jump" onclick="document.querySelector('main').scrollIntoView({behavior:'smooth'})">Ver timeline ↓</button></div></div>
+  <main class="wrap"><div class="intro"><h2>El timeline</h2><p>Los períodos se estiman a partir de las fechas de los archivos y los antecedentes disponibles de cada proyecto.</p></div>
+    <div id="timeline" class="timeline"></div><div class="empty" id="empty">No encontré proyectos con esa búsqueda.</div>
+    <aside class="note"><strong>Cómo leer estas fechas y tecnologías:</strong> las fechas de creación de archivos sirven como guía para estimar los períodos. Abre cada tarjeta para ver los proyectos y sus tecnologías. Cuando los archivos no permiten asignar una tecnología a un subproyecto concreto, se muestran las tecnologías detectadas en el conjunto de esa carpeta.</aside>
+  </main>
+  <footer class="wrap foot"><span>Resumen orientativo; puede haber proyectos dentro de respaldos sin identificar.</span></footer>
+<script>
+const projects=[
+ {year:2001,range:'2001–2010',client:'accesodirecto',type:'Sitio web · formularios',desc:'Sitio y formularios web con registro de postulaciones, envío de correos y reportes. El archivo incluye además componentes de contador de visitas e información del sistema.',evidence:'PORTADA.HTM · EMAIL.ASP · formulariotrabajo.swf · FormatoReporte'},
+ {year:2007,range:'2007–2010',client:'ANDA',type:'Plataforma institucional · gestión',desc:'Evolución de herramientas para la Asociación Nacional de Avisadores: sitio institucional, asociación y fichas, directorio, promociones, estudios de mercado y sistemas internos de gestión y descargas.',evidence:'SGE · Directorio · AKC · Recursos · Ficha_anda.'},
+ {year:2002,range:'2002–2004',client:'AbsolutChile',type:'Turismo · reservas',desc:'Sistema de reservas para servicios turísticos. El código contempla hoteles, arriendo de autos, departamentos, bicicletas, cruceros y pasajeros, junto con administración y búsqueda de reservas.',evidence:'ReservationSystem · ReservationHotel.asp · ReservationCar.asp'},
+ {year:2003,range:'2003–2010',client:'Acuarium Comunicaciones',type:'Agencia digital · sistemas a medida',desc:'Conjunto de sitios, formularios y sistemas para distintos clientes de la agencia. Se reconocen inscripción y gestión de profesionales para Accu‑Chek, encuestas para BCI, contenidos y módulos administrativos.',evidence:'Accu-Check · BCI/Encuesta Informatica · ONC · Santa Sara Export'},
+ {year:2003,range:'2003–2009',client:'CaerSport',type:'Comercio electrónico · deportes',desc:'Sitio de CaerSport con catálogo y tienda en línea basada en osCommerce, además de galerías de fotos, videos y contenido del equipo/rally.',evidence:'oscommerce-2.2rc2a · catalog · galeria · videos.html'},
+ {year:2004,range:'2004–2010',client:'AMD',type:'Sitio institucional · formularios',desc:'Sitio con minisitio de contenidos, registro e inscripción, formulario de contacto, inicio de sesión y generación de reportes en Excel.',evidence:'minisitio · page-inscripcion.html · reporte_excel.asp'},
+ {year:2007,range:'2007–2010',client:'BAINGAR',type:'Promociones · campañas interactivas',desc:'Desarrollo de campañas promocionales con registro de participantes, encuestas, concursos y exportación de resultados. Aparecen experiencias para MixYourLife, asados y GanaConGamma, además de otros micrositios.',evidence:'promomix · mixyourlife · GanaConGamma · salida_excel.php'},
+ {year:2006,range:'2006–2012',client:'ChileClipping',type:'Plataforma · monitoreo de prensa',desc:'Sistema para gestionar clipping de prensa para clientes: carga y edición de notas, filtros, alertas por correo, resúmenes, gráficos y exportación a PDF, Excel y texto.',evidence:'Clipping/clientes · ver_nota_pdf.php · enviar_alerta.php · graficos.php'},
+ {year:2020,range:'2020',client:'Continente Digital',type:'Sitios web · contenidos y formularios',desc:'Dos líneas de trabajo visibles: un portal de artículos de jurisprudencia con descarga de documentos y formularios para SOS Digital relacionados con donantes y beneficiarios.',evidence:'aijudefa.com/articulos_jurisprudencia · sosdigital/formularios'},
+ {year:2026,range:'2021–2026',client:'DuckyPrinted',type:'E-commerce · operación y pagos',desc:'Construcción y evolución de una tienda en línea para productos personalizados: catálogo, panel administrativo, gestión de pedidos y pagos con Webpay. El archivo también contiene una versión .NET anterior y material de pruebas e integración.',evidence:'LiteShop · EShopLite · _business/webpay.php · integracion webpayplus'},
+ {year:2022,range:'2022–2026',client:'OpenSoft',type:'Workflow y aplicaciones batch',desc:'Mantención y desarrollo de workflows empresariales para solicitudes, aprobaciones, formularios dinámicos, usuarios, indicadores y reportes. También incluye aplicaciones batch para cargas y avisos automatizados, junto con procedimientos SQL de soporte.',evidence:'OpenFlow/ECR · OpenFormulario · OpenNet · OpenSupport · SQL/procedimientos · procesos batch.'},
+ {year:2026,range:'2024–2026',client:'LiteShop',type:'Plataforma e-commerce · producto SaaS',desc:'Desarrollo de LiteShop como plataforma de comercio electrónico, con backend PHP, frontend React/TypeScript, administración y gestión de tiendas. También hay módulos de pagos, integraciones de despacho, privacidad y adecuación normativa.',evidence:'frontend/src · _business · LiteShop_scripts · módulo órdenes'},
+ {year:2025,range:'2025–2026',client:'AI-200',type:'API · laboratorio de IA',desc:'Pequeña API en FastAPI con endpoints de estado y saludo, identificada como AI-200 Lab. El repositorio incluye configuración para contenedores y un worker.',evidence:'ai200-lab/api/main.py · Dockerfile · worker.py'},
+ {year:2025,range:'2025',client:'Italinnea',type:'Sitio web · mantención',desc:'Mantención del sitio y su panel de administración, con ajustes de configuración, editor de contenido, pie de página y catálogo.',evidence:'propuestas italinnea.rtf · app/Http/Controllers · resources/views/*.blade.php · routes/web.php · mantencion 6 dic.txt · italinnea_sitio2.sql'},
+ {year:2024,range:'2024',client:'Fynsa',type:'Inventario · órdenes de compra · telefonía',desc:'Sistema interno para consultar órdenes de compra, recepcionar y retirar productos con lectura de códigos de barra, junto con pantallas de anexos y registros de grabaciones telefónicas. El respaldo conserva frontend y vistas de ambos flujos, aunque no todos los controladores están incluidos.',evidence:'UPM/fynsa · application/controllers/Asterisk.php · views/grabacion*.php · assets/js/app/ordencompra.js · recepcion.js · retiro.js · código fuente revisado en 2024'},
+ {year:2004,range:'2004–2005',client:'Cecodisa',type:'Comercio electrónico · catálogo y tienda',desc:'Tienda web con listado de productos y lógica de compra. Los archivos incluyen controles de conexión, calendario y validaciones de tipo de usuario y cliente.',evidence:'tienda/ShowProductos.asp · verificaidcompra.inc · connopen.inc'},
+ {year:2007,range:'2007–2010',client:'DWM Proyectos',type:'Sitios y aplicaciones · campañas y servicios',desc:'Desarrollos para DWM Diseño y proyectos asociados: concurso de frases de Vértigo de Paya; buscador de cursos y formularios de Adecco; mensajería de AdiagCL; y cotizaciones y materiales de encuesta/mailing asociados a Alejandro Gutiérrez.',evidence:'VertigoDePaya · Adecco/buscador_capacitacion · AdiagCL · cotizaciones/mailing Alejandro Gutiérrez.'},
+ {year:2004,range:'2004',client:'Proyectos particulares',type:'Catálogo web · productos',desc:'Catálogo de productos de menaje y multimarcas, con páginas de productos y listados. También hay un prototipo de catálogo con operaciones de consulta, actualización y guardado.',evidence:'multimarcas/productos.php · Projet/CATALOGO · listar_productos.php'},
+ {year:2005,range:'2005–2006',client:'FreelanceTeam',type:'Prototipos · experimentación web',desc:'Carpeta pequeña de investigación de efectos e interacciones para un photolog: pruebas de texto, desplazamiento y selección en páginas web. La evidencia apunta a prototipos, no a un producto desplegado.',evidence:'Photolog/Research · rippletext.js · fly.js'},
+ {year:2000,range:'2000–2005',client:'Fundación Chile',type:'Educación · portales, gestión y contenidos',desc:'Desarrollos educativos para Fundación Chile y Educarchile: FOGES para tareas, compromisos y supervisión; portal y herramientas para estudiantes y docentes; PSU y banco de preguntas; IBM Kids; y sincronización, intercambio y conversión de contenidos para RELPE.',evidence:'FOGES · educarchile/PSU · IBM Kids · ContentExchanger · RELPE · Exportador.'},
+ {year:2007,range:'2007–2010',client:'Nestlé',type:'Campañas · formularios y reportes',desc:'Sitios promocionales y campañas para distintas marcas: concursos, inscripción, recetarios, encuestas, formularios de contacto y administración de participantes, con reportes descargables.',evidence:'ClubNesquik · recetario · Purina · AmorYSabor · Reportes.asp. Varios archivos del respaldo están fechados en 2004–2006.'},
+ {year:2003,range:'2003–2005',client:'NovaIdea',type:'Agroreportes · cotizaciones y gestión',desc:'Sistema Agroreportes para consultar y graficar datos por fecha y tipo, herramientas de carga masiva, cotizaciones comerciales y gestión inmobiliaria de Altas Cumbres.',evidence:'Agroreportes · Massive Loader · plasticosrehnos · ALTASCUMBRES · ventas/postventa'},
+ {year:2005,range:'2005–2007',client:'SOLUSOFT',type:'Portal · publicaciones e información',desc:'Portal para El Salvador con registro e inicio de sesión, navegación de canales y contenidos, comentarios y búsqueda. Se conservan versiones para MINED y un portal beta, junto con una interfaz introductoria animada de Solusoft.',evidence:'El Salvador/Portal · MINED · Portal BETA · MiPortal · pagina.swf.'},
+ {year:2005,range:'2005',client:'Swiss',type:'Sitio web · contador de visitas',desc:'Contador de visitas web en PHP acompañado por una página de presentación.',evidence:'Contador/contador.php · Contador/index5.htm'},
+ {year:2010,range:'2010–2021',client:'Dunalastair',type:'Sistemas escolares · gestión académica',desc:'Desarrollo y mantención de sitios web y sistemas internos escolares: asistencia en línea, consolidación de datos, consulta por familias, alumnos y asignaturas, actualización de notas y actas, evaluaciones de competencias, gestión de libro de clases VCB e intranet de apoderados ROA.',evidence:'Asistencia y jobs · VCB · ROA · notas/actas.'},
+ {year:2026,range:'2026',client:'IBuddyLive',type:'Aplicación de escritorio · monitoreo de navegador y USB',desc:'Aplicación que observa pestañas abiertas o modificadas en Chrome, Safari y Edge y usa un i-Buddy USB para responder a cambios, por ejemplo indicando actividad de WhatsApp con luces y movimiento.',evidence:'Program.cs · BrowserMonitor.cs · BrowserReader.cs · iBuddy.cs · scripts AppleScript'},
+ {year:2026,range:'2026',client:'Proyecto Título - Ingeniería Informática',type:'Proyecto de título · energía y reducción de CO₂',desc:'Prototipo de dashboard para simular consumo horario de ATMs, comparar datos recientes e históricos, estimar emisiones y recomendar apagados durante períodos de inactividad. Incluye gráficas y una capa LLM de apoyo con backend separado.',evidence:'zeroemitionsmartpower · zeroemitionsmartpower_backend · documentación funcional y técnica'}
+];
+const technologies={
+ 'accesodirecto':['ASP clásico','HTML','Flash / ActionScript','Visual Basic'], 'ANDA':['ASP clásico','HTML/CSS','JavaScript','C# / ASP.NET','Excel / SQL'],
+ 'AbsolutChile':['ASP clásico','HTML/CSS','JavaScript','SQL'], 'Acuarium Comunicaciones':['PHP','JavaScript','HTML/CSS','SQL'],
+ 'CaerSport':['PHP','osCommerce 2.2','MySQL','HTML/CSS','JavaScript'], 'AMD':['ASP clásico','HTML/CSS','JavaScript','SQL'],
+ 'BAINGAR':['PHP','MySQL','JavaScript','HTML/CSS'], 'ChileClipping':['PHP','MySQL','JavaScript','HTML/CSS','PDF / Excel'], 'Continente Digital':['PHP','HTML/CSS','SQL'],
+ 'DuckyPrinted':['PHP','MySQL','JavaScript','HTML/CSS','ASP.NET / C#','Webpay Plus','Composer'],
+ 'OpenSoft':['ASP clásico','VB.NET','C# / .NET Framework','SQL Server','JavaScript','VBScript','XML / JSON','Excel'],
+ 'LiteShop':['PHP','React','TypeScript','Vite','MySQL / SQL','Webpay Plus','Composer'], 'AI-200':['Python','FastAPI','Docker'],
+ 'Italinnea':['Laravel','PHP','Blade','JavaScript','Summernote','SQL'], 'Fynsa':['PHP','CodeIgniter 3','JavaScript','jQuery','Bootstrap','Chart.js','WebCodeCam / QR'],
+ 'Cecodisa':['ASP clásico','VBScript','SQL / base de datos'], 'DWM Proyectos':['PHP','ASP clásico','HTML/CSS','JavaScript','Excel','CSV'],
+ 'Proyectos particulares':['PHP','MySQL','JavaScript','HTML/CSS'], 'FreelanceTeam':['JavaScript','HTML/CSS'],
+ 'Fundación Chile':['ASP clásico','ASP.NET','XML / XSLT','VB6','Java','JavaScript','SQL Server','Flash'],
+'Nestlé':['ASP clásico','VBScript','SQL Server','HTML/CSS','JavaScript','Flash','Excel'],
+ 'NovaIdea':['ASP clásico','PHP','SQL Server','Visual Basic 6','JavaScript','HTML/CSS'],
+ 'SOLUSOFT':['ASP.NET Web Forms','C# / .NET','SQL Server','HTML/CSS','JavaScript','XML','Flash / SWF'],
+ 'Swiss':['PHP','HTML'], 'Dunalastair':['SQL Server / T-SQL','Procedimientos almacenados','.NET','CSS','HTML','JavaScript'],
+ 'IBuddyLive':['C#','.NET 8','AppleScript','libusb','USB HID'],
+ 'Proyecto Título - Ingeniería Informática':['JavaScript ES Modules','Vite','Chart.js','Node.js / Express','OpenAI API','GitHub Pages','Render']
+};
+const projectDetails={
+ 'accesodirecto':[
+  {name:'Formulario de postulaciones',desc:'Registro interactivo, envío de datos y confirmación de recepción.',tech:['ASP clásico','HTML','Flash / ActionScript']},
+  {name:'Correo y reportes del sitio',desc:'Procesamiento de formularios y vistas de reporte.',tech:['ASP clásico','HTML']},
+  {name:'Contador e información del sistema',desc:'Utilidades complementarias de visitas e información del navegador/equipo.',tech:['ASP clásico','Visual Basic']}
+ ],
+ 'ANDA':[
+  {name:'SGE · Sistema de Gestión',desc:'Gestión de información, usuarios, carga de datos y reportes.',tech:['ASP clásico / VBScript','SQL','JavaScript']},
+  {name:'Directorio y fichas de asociados',desc:'Consulta y mantenimiento de fichas y directorio institucional.',tech:['ASP clásico','HTML/CSS','JavaScript','SQL']},
+  {name:'AKC · estudios y descargas',desc:'Consulta de estudios y archivos asociados, con módulos de administración y descarga.',tech:['ASP.NET / C#','ASP clásico','Excel','SQL']},
+  {name:'Recursos, promociones y contenidos',desc:'Secciones de contenidos y recursos institucionales conservadas en el respaldo.',tech:['ASP clásico','HTML/CSS','JavaScript']}
+ ],
+ 'AbsolutChile':[
+  {name:'Reservas de hotel y alojamiento',desc:'Búsqueda, disponibilidad y administración de reservas.',tech:['ASP clásico','SQL','HTML/CSS']},
+  {name:'Reservas de transporte y servicios',desc:'Módulos para autos, bicicletas, cruceros y otros servicios turísticos.',tech:['ASP clásico','SQL','JavaScript']},
+  {name:'Gestión de pasajeros y reservas',desc:'Formularios para pasajeros, edición, búsqueda y operaciones de reserva.',tech:['ASP clásico','SQL','HTML/CSS']}
+ ],
+ 'CaerSport':[
+  {name:'Tienda online CaerSport',desc:'Catálogo de productos, carrito y flujos de compra sobre osCommerce.',tech:['PHP','osCommerce 2.2','MySQL']},
+  {name:'Galería, fotos y videos',desc:'Secciones visuales para galerías y contenido audiovisual del equipo.',tech:['PHP','HTML/CSS','JavaScript']}
+ ],
+ 'AMD':[
+  {name:'Minisitio y contenidos institucionales',desc:'Secciones informativas y navegación del sitio.',tech:['ASP clásico','HTML/CSS','JavaScript']},
+  {name:'Inscripción y contacto',desc:'Formularios con guardado y validación de registros.',tech:['ASP clásico','SQL','HTML']},
+  {name:'Reportes de inscripciones',desc:'Consulta y descarga de resultados en Excel.',tech:['ASP clásico','Excel','SQL']}
+ ],
+ 'BAINGAR':[
+  {name:'Promomix y MixYourLife',desc:'Campañas promocionales con inscripción, encuestas y resultados.',tech:['PHP','MySQL','JavaScript','HTML/CSS']},
+  {name:'Asado en casa y fiesta en casa',desc:'Micrositios de concursos con formularios y registro de participantes.',tech:['PHP','MySQL','JavaScript']},
+  {name:'GanaConGamma y otras promociones',desc:'Experiencias de campaña con administración y exportación de datos.',tech:['PHP','MySQL','Excel']}
+ ],
+ 'ChileClipping':[
+  {name:'Portal de clipping para clientes',desc:'Ingreso, consulta, filtro, edición y descarga de notas de prensa.',tech:['PHP','MySQL','JavaScript','HTML/CSS']},
+  {name:'Alertas y resumen diario',desc:'Envío de alertas y resúmenes a clientes.',tech:['PHP','Correo SMTP']},
+  {name:'Reportes y exportaciones',desc:'Gráficos y exportación de notas a PDF, Excel y texto.',tech:['PHP','PDF','Excel']}
+ ],
+ 'Continente Digital':[
+  {name:'Artículos de jurisprudencia · aijudefa.com',desc:'Portal de artículos con descarga de documentos.',tech:['PHP','HTML/CSS','SQL']},
+  {name:'Formularios SOS Digital',desc:'Formularios de donante/beneficiario.',tech:['PHP','HTML/CSS','SQL']}
+ ],
+ 'Acuarium Comunicaciones':[
+  {name:'Accu‑Chek · inscripción y gestión',desc:'Registro de profesionales y gestión de información; hay también un demo administrativo.',tech:['PHP','JavaScript','HTML/CSS','SQL']},
+  {name:'BCI · encuestas',desc:'Formularios y sistemas de encuesta interna.',tech:['PHP','JavaScript','HTML/CSS','SQL']},
+  {name:'ONC · buscador y mantenedor de recetas',desc:'Búsqueda, alta y edición de recetas y contenidos.',tech:['ASP clásico','JavaScript','HTML/CSS','SQL']},
+  {name:'Santa Sara Export y otros sitios',desc:'Sitios y módulos de contenido para los demás proyectos del archivo.',tech:['PHP / ASP clásico','HTML/CSS','JavaScript']}
+ ],
+ 'DuckyPrinted':[
+  {name:'EShopLite · versión .NET',desc:'Versión anterior de la tienda, conservada como solución ASP.NET.',tech:['C# / ASP.NET','SQL Server']},
+  {name:'LiteShop · tienda y administración',desc:'Catálogo, operación de pedidos y panel de gestión para la tienda.',tech:['PHP','MySQL','JavaScript','HTML/CSS','Composer']},
+  {name:'Integración de pagos Webpay',desc:'Integración, pruebas y manejo de resultados del flujo de pago.',tech:['PHP','Webpay Plus','HTTP / API']}
+ ],
+ 'DWM Proyectos':[
+  {name:'Vértigo de Paya · concurso de frases',desc:'Registro de participantes, envío e invitación, votación y exportación de resultados.',tech:['PHP','HTML','Base de datos (motor no confirmado)']},
+  {name:'Adecco · buscador de capacitación',desc:'Búsqueda de cursos, visualización de información y formularios de contacto.',tech:['PHP','ASP clásico','HTML']},
+  {name:'AdiagCL · mensajería',desc:'Módulo de usuarios y consulta/exportación de mensajes.',tech:['PHP','HTML','Excel']},
+  {name:'Encuesta y comentarios',desc:'Cotización de desarrollo para encuesta/comentarios y materiales asociados.',tech:['Tecnología de implementación no confirmada']},
+  {name:'Mailing y base de contactos',desc:'Preparación de mailing HTML y archivos de contactos.',tech:['HTML','CSV / Excel']},
+  {name:'Agenda Abierta Banco Itaú',desc:'Desarrollo de una aplicación web Agenda Abierta para Banco Itaú.',tech:['PHP','MySQL','CSS','HTML']}
+ ],
+ 'Fundación Chile':[
+  {name:'FOGES · gestión y supervisión',desc:'Sistema para administrar tareas, compromisos, actividades y visitas de supervisión.',tech:['Java / Servlets','SQL']},
+  {name:'Educarchile · portal y herramientas',desc:'Secciones y utilidades para estudiantes, familias y docentes.',tech:['ASP clásico','JavaScript','XML / XSLT','SQL Server']},
+  {name:'PSU · banco de preguntas y ensayos',desc:'Preguntas, facsímiles, historial y miniensayos.',tech:['ASP clásico','SQL','HTML/CSS','JavaScript']},
+  {name:'IBM Kids y espacios educativos',desc:'Tareas, archivos, encuestas, chat, administración de usuarios y servicios educativos.',tech:['ASP clásico','JavaScript','XML','SQL Server']},
+  {name:'ContentExchanger · intercambio de contenidos',desc:'Aplicación para sincronizar e intercambiar paquetes de contenidos educativos.',tech:['Visual Basic 6','ASP','XML','Microsoft Access']},
+  {name:'RELPE · conversión y exportación',desc:'Herramientas para convertir y exportar recursos educativos.',tech:['Visual Basic 6','XML']}
+ ],
+ 'Nestlé':[
+  {name:'Campañas y concursos de marcas',desc:'Inscripciones, concursos, encuestas y reportes de participantes.',tech:['ASP clásico','SQL Server','HTML/CSS','Excel']},
+  {name:'Club Nesquik y formularios',desc:'Inscripción, contacto y recomendación a un amigo.',tech:['ASP clásico','HTML','Flash / SWF']},
+  {name:'Recetarios y Amor y Sabor',desc:'Recetarios, formularios de opinión y contenidos promocionales.',tech:['ASP clásico','SQL Server','HTML/CSS']},
+  {name:'Purina y encuestas',desc:'Formularios de campaña y generación de informes descargables.',tech:['ASP clásico','SQL Server','Excel']},
+  {name:'Gestión de Visitas Médicas',desc:'Aplicación para gestionar visitas médicas.',tech:['ASP','SQL Server','CSS','JavaScript']}
+ ],
+ 'SOLUSOFT':[
+  {name:'Portal El Salvador / MINED',desc:'Portal con registro, acceso, canales, artículos, comentarios y búsqueda.',tech:['ASP.NET Web Forms','C# / .NET','SQL Server','HTML/CSS']},
+  {name:'MiPortal · propuesta e interfaz MINED',desc:'Diseños y materiales para el portal: secciones, noticias, registro, comentarios y piezas gráficas. El respaldo contiene principalmente prototipos y recursos visuales.',tech:['HTML','JavaScript','XML','JPG / GIF / SWF']},
+  {name:'Sitio institucional Solusoft',desc:'Página de entrada animada con varias versiones de la animación principal.',tech:['HTML','JavaScript','Adobe Flash / SWF','FrontPage']}
+ ],
+ 'Dunalastair':[
+  {name:'VCB · gestión de libro de clases',desc:'Sistema escolar que reúne asistencia en línea y consolidación por curso, nivel y modalidad; consulta de alumnos y grupos familiares; actualización de notas, generación de actas y evaluaciones por competencia; y reportes y tareas programadas.',tech:['.NET','SQL Server / T‑SQL','Procedimientos almacenados','CSS','HTML','JavaScript','Excel / PDF']},
+  {name:'ROA · intranet de docentes',desc:'Gestión de recursos para clases, mensajería e información interna.',tech:['.NET','SQL Server','CSS','HTML','JavaScript']},
+  {name:'Intranet de apoderados',desc:'Portal para que las familias consulten información académica y asistencia, horarios, avisos y recursos escolares, con mensajería para comunicarse con los docentes.',tech:['.NET','SQL Server','CSS','HTML','JavaScript']},
+ ],
+ 'LiteShop':[
+  {name:'Tienda y experiencia de compra',desc:'Frontend de catálogo y compra con gestión de productos y tiendas.',tech:['React','TypeScript','Vite','PHP']},
+  {name:'Panel de administración y gestión',desc:'Administración de tiendas, pedidos, usuarios y configuración.',tech:['PHP','React','TypeScript','MySQL / SQL']},
+  {name:'Pagos, despacho y privacidad',desc:'Integraciones de pago y despacho, enlaces externos y módulos de privacidad/cumplimiento.',tech:['PHP','Webpay Plus','SQL','APIs HTTP']}
+ ],
+ 'OpenSoft':[
+  {name:'Workflow',desc:'Flujos empresariales para solicitudes, aprobaciones, formularios dinámicos, usuarios, indicadores y reportes, con procedimientos SQL de soporte.',tech:['ASP clásico','VB.NET','C# / .NET','SQL Server / T‑SQL','JavaScript','Excel']},
+  {name:'Aplicaciones batch',desc:'Procesos automatizados para cargas masivas, actualización/verificación de indicadores y avisos de vencimiento.',tech:['C# / .NET','VB.NET','VBScript','SQL Server']}
+ ],
+ 'AI-200':[
+  {name:'API AI-200 Lab',desc:'Endpoints de salud del servicio y saludo de prueba.',tech:['Python','FastAPI']},
+  {name:'Worker y contenedores',desc:'Configuración de worker y ejecución de la API en contenedores.',tech:['Python','Docker']}
+ ],
+ 'Italinnea':[
+  {name:'Administración y contenido',desc:'Permite actualizar los textos e imágenes del sitio desde el panel de administración y mantener la información del pie de página.',tech:['Laravel','PHP','Blade','JavaScript','Summernote']},
+  {name:'Catálogo de productos',desc:'Incluye la revisión y mantención de productos para conservar actualizada su información y presentación en el sitio.',tech:['Laravel','SQL']}
+ ],
+ 'Fynsa':[
+  {name:'Inventario y órdenes de compra',desc:'Frontend para consultar órdenes y sus detalles, paginar resultados, recibir productos y registrar retiros. Los scripts manejan proveedores, productos y códigos de barra.',tech:['PHP','CodeIgniter 3','JavaScript','jQuery','Bootstrap']},
+  {name:'Lectura de códigos y apoyo visual',desc:'La aplicación incluye librerías de cámara/decodificación de códigos y componentes de gráficos.',tech:['WebCodeCam','QR / códigos de barra','Chart.js']},
+  {name:'Anexos y grabaciones telefónicas',desc:'Vistas para iniciar sesión, consultar anexos y abrir el índice de registros de grabaciones; el controlador Asterisk administra la navegación y sesión.',tech:['PHP','CodeIgniter 3','JavaScript','jQuery']}
+ ],
+ 'Cecodisa':[
+  {name:'Tienda y catálogo de productos',desc:'Consulta de productos y funciones de compra, con controles de usuario y conexión a datos.',tech:['ASP clásico','VBScript','SQL']}
+ ],
+ 'Proyectos particulares':[
+  {name:'Catálogo de menaje y productos multimarcas',desc:'Páginas de catálogo y listado de productos.',tech:['PHP','MySQL','HTML/CSS']},
+  {name:'Prototipo de catálogo administrable',desc:'Consulta, actualización y guardado de productos.',tech:['PHP','MySQL','HTML/CSS']}
+ ],
+ 'FreelanceTeam':[
+  {name:'Photolog · pruebas de interacción',desc:'Experimentos de texto, desplazamiento y selección en páginas web; no hay evidencia de producto final.',tech:['JavaScript','HTML/CSS']}
+ ],
+ 'NovaIdea':[
+  {name:'Agroreportes',desc:'Consulta y gráficos de datos por fecha y tipo, con manejo de usuarios y filtros.',tech:['ASP clásico','SQL Server','JavaScript']},
+  {name:'Massive Loader',desc:'Herramienta de carga masiva asociada a datos y reportes.',tech:['Visual Basic 6']},
+  {name:'Cotización y seguimiento',desc:'Archivos de cotización para productos y seguimiento de ventas.',tech:['ASP clásico','SQL Server']},
+  {name:'Altas Cumbres · ventas y postventa',desc:'Módulos de gestión inmobiliaria para cotización/reserva, seguimiento de ventas, consulta de escrituras y actas de entrega.',tech:['ASP clásico','VBScript','SQL Server','HTML']}
+ ],
+ 'Swiss':[
+  {name:'Contador de visitas',desc:'Contador web en PHP y página de presentación.',tech:['PHP','HTML']}
+ ],
+ 'IBuddyLive':[
+  {name:'Browser Monitor · eventos de pestañas',desc:'Detecta pestañas nuevas, cerradas o modificadas en Chrome, Safari y Edge.',tech:['C#','.NET 8','AppleScript']},
+  {name:'Integración USB con i-Buddy',desc:'Envía comandos para controlar luces, corazón y alas del dispositivo.',tech:['C#','.NET 8','libusb','USB HID']},
+  {name:'Avisos según actividad del navegador',desc:'Asocia cambios de pestaña (por ejemplo, WhatsApp) con señales luminosas y movimiento.',tech:['C#','AppleScript','USB']}
+ ],
+ 'Proyecto Título - Ingeniería Informática':[
+  {name:'Dashboard de energía para ATMs',desc:'Simula estados y consumo horario; calcula CO₂, comparación histórica, ahorro y oportunidades de apagado.',tech:['JavaScript ES Modules','Vite','Chart.js','localStorage']},
+  {name:'Motor de recomendación energética',desc:'Reglas locales para sugerir ON/OFF usando inactividad, consumo y estado peak operacional.',tech:['JavaScript','Reglas determinísticas']},
+  {name:'Explicación LLM',desc:'Backend que recibe el prompt del dashboard y consulta OpenAI para redactar una explicación de la recomendación.',tech:['Node.js','Express','OpenAI Responses API','gpt-4o-mini']},
+  {name:'Publicación del prototipo',desc:'Frontend y backend publicados como servicios separados.',tech:['GitHub Pages','Render']}
+ ]
+};
+const timeline=document.querySelector('#timeline'), search=document.querySelector('#search'), empty=document.querySelector('#empty');
+document.querySelector('#project-total').textContent=projects.length;
+function detailsFor(p){
+ if(projectDetails[p.client])return projectDetails[p.client];
+ const clues=p.evidence.split(/\. (?:El archivo|varios archivos)/i)[0].split(' · ').map(x=>x.trim()).filter(Boolean);
+ const stack=technologies[p.client]||['No identificables en los archivos'];
+ if(clues.length<2)return [{name:p.type,desc:p.desc,tech:stack}];
+ return clues.map((clue,i)=>({name:`Módulo o referencia · ${clue}`,desc:i===0?p.desc:'Referencia relacionada encontrada en la carpeta del cliente; el alcance específico no queda descrito en los archivos.',tech:stack}));
+}
+document.querySelector('#work-total').textContent=projects.reduce((total,p)=>total+detailsFor(p).length,0);
+function render(){
+ const q=search.value.trim().toLocaleLowerCase('es');
+ const decadeAccents={2000:'#c16b43',2010:'#367c78',2020:'#5d67a5'};
+ const order2026={'LiteShop':0,'Proyecto Título - Ingeniería Informática':1,'DuckyPrinted':2,'IBuddyLive':3};
+ const list=projects.filter(p=>{const rows=detailsFor(p);const text=p.client+' '+p.type+' '+p.desc+' '+p.evidence+' '+(technologies[p.client]||[]).join(' ')+' '+rows.map(r=>r.name+' '+r.desc+' '+r.tech.join(' ')).join(' ');return text.toLocaleLowerCase('es').includes(q)});
+ document.querySelector('#count').textContent=`${list.length} de ${projects.length} clientes/grupos`;empty.style.display=list.length?'none':'block';
+ const groups=new Map();for(const p of list){if(!groups.has(p.year))groups.set(p.year,[]);groups.get(p.year).push(p)}
+ timeline.innerHTML=[...groups].sort((a,b)=>b[0]-a[0]).map(([year,items])=>{const orderedItems=year===2026?[...items].sort((a,b)=>(order2026[a.client]??99)-(order2026[b.client]??99)):items;return `<section class="year-group"><div class="year">${year}</div><div class="cards">${orderedItems.map(p=>{const rows=detailsFor(p),accent=decadeAccents[Math.floor(p.year/10)*10]||'#1d694f',clientTitle=p.client==='DuckyPrinted'?`<a class="client-link" href="https://www.duckyprinted.cl" target="_blank" rel="noopener noreferrer">${p.client}</a>`:p.client;return `<article class="card" style="--card-accent:${accent}"><div class="card-top"><div class="client">${clientTitle}</div><span class="period">${p.range}</span></div><div class="type">${p.type}</div><p class="desc">${p.desc}</p><div class="techs" aria-label="Tecnologías detectadas">${(technologies[p.client]||['No identificables en los archivos']).map(t=>`<span class="tech">${t}</span>`).join('')}</div><details class="expander"><summary><span>Ver proyectos y tecnologías por proyecto</span><span>${rows.length} ${rows.length===1?'elemento':'elementos'}</span></summary><div class="work-list">${rows.map(r=>`<section class="work-item"><div class="work-name">${r.name}</div><p class="work-desc">${r.desc}</p>${r.tech.length?`<div class="work-techs">${r.tech.map(t=>`<span class="tech">${t}</span>`).join('')}</div>`:''}</section>`).join('')}</div></details></article>`}).join('')}</div></section>`}).join('');
+}
+search.addEventListener('input',render);render();
+</script>
+</body>
+</html>
