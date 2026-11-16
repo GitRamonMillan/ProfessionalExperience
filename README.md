@@ -11,4 +11,8 @@ Timeline web interactivo para presentar proyectos de desarrollo agrupados por a�
 - Acentos de color por década.
 - Avatar enlazado al perfil público de GitHub.
 
-La página es estática y no requiere dependencias ni proceso de compilación. Para verla localmente, abre `index.html` en un navegador.
+La página es estática y no requiere dependencias ni proceso de compilación.
+
+Para verla accede a https://gitramonmillan.github.io/ProfessionalExperience/ en un navegador.
+
+Generada en conjunto con Codex.
